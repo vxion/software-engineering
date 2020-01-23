@@ -11,6 +11,14 @@ end
 # Part II
 def max_2_sum arr
   # YOUR CODE HERE
+  if arr.empty?
+    return 0
+  elsif arr.length == 1
+    return arr[0]
+  else
+    arr.sort!
+    return arr[-2] + arr[-1]
+  end
 end
 
 # Part III
