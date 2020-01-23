@@ -24,4 +24,17 @@ end
 # Part III
 def sum_to_n? arr, n
   # YOUR CODE HERE
+  if arr.empty? || arr.length == 1
+    return false
+  else
+    
+    for i in 0..arr.length
+      for k in ((i+1)...arr.length)
+        if arr[i] + arr[k] == n
+          return true
+        end
+      end
+    end 
+  end
+  return false
 end
