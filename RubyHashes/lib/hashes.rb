@@ -5,56 +5,55 @@ def array_2_hash emails, contacts
     if emails.length == 0
         return contacts
     else
-        num = 0
+        counter = 0
         key = contacts.keys
-        hash = Hash.new
+        h = Hash.new
         key.each do |i|
-            hash[i] = emails[num]
-            num = num + 1
+            h[i] = emails[counter]
+            counter += 1
         end
     end
-    return hash
+    return h
 end
 
 # Part II
 def array2d_2_hash contact_info, contacts
     # YOUR CODE HERE
-    unless contact_info[0].any?
+    if not contact_info[0].any?
         return contacts
     else
-        keyarray = contacts.keys
-        newHash = Hash.new {|hash, key| hash[key] = { } }
-        c = 0
-        keyarray.each do |x|
-            newHash[x].store :email,contact_info[c][0]
-            newHash[x].store :phone,contact_info[c][1]
-            c = c + 1
+        k = contacts.keys
+        h = Hash.new {|hash, key| hash[key] = { } }
+        counter = 0
+        k.each do |i|
+            h[i].store :email,contact_info[counter][0]
+            h[i].store :phone,contact_info[counter][1]
+            counter += 1
         end
     end
-    return newHash
+    return h
 end
-
 
 # Part III
 def hash_2_array contacts
     # YOUR CODE HERE
-    keyarray = contacts.keys
-    emailarray = Array.new
-    phonearray = Array.new
-    c = 0
-    keyarray.each do |x|
+    k = contacts.keys
+    emailarr = Array.new
+    phonearr = Array.new
+    counter = 0
+    k.each do |i|
         hash = Hash.new
-        hash = contacts[x]
-        emailarray[c] = hash[:email]
-        phonearray[c] = hash[:phone]
-        c = c + 1 
+        hash = contacts[i]
+        emailarr[counter] = hash[:email]
+        phonearr[counter] = hash[:phone]
+        counter += 1 
     end
-    x = 0
-    while x < keyarray.length 
-        keyarray[x] = keyarray[x].id2name
-        x = x + 1
+    j = 0
+    while j < k.length 
+        k[j] = k[j].id2name
+        j += 1
     end
-    finalarray = [ emailarray, phonearray, keyarray ] 
-    return finalarray
+    finalarr = [ emailarr, phonearr, k ] 
+    return finalarr
 end
 
