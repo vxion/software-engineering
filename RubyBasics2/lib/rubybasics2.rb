@@ -18,23 +18,11 @@ def starts_with_consonant? s
     else
       return false
     end
-end
-
-end
+  end 
+end 
 
 # Part III
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
-    if(s.eql?("0"))
-    return true
-  end
-  if(s.match(/[^0-1]/))
-    return false
-  else
-    if(s.match(/^[10]*00$/))
-      return true
-    else
-      return false
-    end
-  end
+	return true if s == "0"
+	/^[10]*00$/.match(s) != nil
 end
