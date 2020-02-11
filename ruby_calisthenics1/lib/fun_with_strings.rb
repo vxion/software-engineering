@@ -5,19 +5,21 @@ module FunWithStrings
     test = self.downcase.gsub(/[^a-z]/, '')
      test == test.reverse
   end
+  
   def count_words
     # your code here
     test = Hash.new(0)
     other = self.downcase.gsub(/[^a-z\s]/,'')
     other.split.each do |x|
-      test[x] += 1
+      test[x]+=1
       end
       test
   end
+  
   def anagram_groups
     # your code here
       test = self.downcase.gsub(/[^a-z\s]/,'')
-      test.split.group_by{ |x| x.chars.sort }.values
+      test.split.group_by{|x|x.chars.sort}.values
   end
 end
 
