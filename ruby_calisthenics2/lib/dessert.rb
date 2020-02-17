@@ -17,8 +17,12 @@ class Dessert
   
   def delicious?
     # your code here
-    return true
-  end
+    if @flavor == 'licorice'
+      return false
+    else
+      return true
+      end
+    end
 end
 
 class JellyBean < Dessert
